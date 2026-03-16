@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core palette: white, navy blues, bright blue, construction orange */
+    --background: 0 0% 100%;          /* white */
+    --foreground: 222 47% 11%;        /* deep navy */
+
+    --card: 210 40% 97%;              /* very light blue/white */
+    --card-foreground: 222 47% 11%;   /* deep navy */
+
+    --popover: 0 0% 100%;             /* white */
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 21%;           /* navy blue */
+    --primary-foreground: 210 40% 98%;/* near white */
+
+    --secondary: 210 40% 96%;         /* light blue/white */
+    --secondary-foreground: 222 47% 21%;
+
+    --muted: 210 40% 96%;             /* soft blue/white */
+    --muted-foreground: 215 16% 47%;  /* muted navy/blue */
+
+    --accent: 213 94% 52%;            /* bright blue */
+    --accent-foreground: 0 0% 100%;   /* white */
+
+    /* Use construction orange instead of red for emphasis */
+    --destructive: 25 95% 53%;        /* construction orange */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;            /* light blue border */
+    --input: 214 32% 91%;
+    --ring: 222 47% 21%;              /* navy outline */
+
+    --radius: 0.75rem;
+
+    /* Product colors restricted to blue/orange/navy/white */
+    --construction: 25 95% 53%;       /* orange */
+    --construction-light: 25 95% 95%; /* very light orange/white */
+    --insurance: 213 94% 52%;         /* reuse bright blue */
+    --insurance-light: 213 94% 95%;   /* pale blue/white */
+
+    /* Custom navy scale and orange accent */
+    --navy-deep: 222 47% 11%;         /* deep navy */
+    --navy-mid: 222 47% 21%;          /* mid navy */
+    --navy-light: 222 30% 35%;        /* lighter navy/blue */
+    --gold: 25 95% 53%;               /* align "gold" with construction orange */
+
+    --shadow-soft: 0 4px 24px hsl(222 47% 11% / 0.08);
+    --shadow-card: 0 1px 3px hsl(222 47% 11% / 0.06), 0 8px 24px hsl(222 47% 11% / 0.06);
+    --shadow-elevated: 0 12px 40px hsl(222 47% 11% / 0.12);
+
+    /* Sidebar tones kept within navy/blue/orange/white */
+    --sidebar-background: 222 47% 21%;            /* navy */
+    --sidebar-foreground: 210 40% 98%;            /* white */
+    --sidebar-primary: 213 94% 52%;               /* bright blue */
+    --sidebar-primary-foreground: 0 0% 100%;      /* white */
+    --sidebar-accent: 222 47% 28%;                /* slightly lighter navy */
+    --sidebar-accent-foreground: 210 40% 98%;     /* white */
+    --sidebar-border: 222 47% 28%;                /* navy border */
+    --sidebar-ring: 213 94% 52%;                  /* bright blue ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-navy {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(222 47% 21%), hsl(213 94% 52%));
+  }
+
+  .bg-navy-gradient {
+    background: linear-gradient(135deg, hsl(222 47% 11%), hsl(222 47% 21%));
+  }
+
+  .bg-navy-section {
+    background: linear-gradient(180deg, hsl(222 47% 15%), hsl(222 47% 11%));
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card-custom {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .hero-gradient-overlay {
+    background: linear-gradient(180deg, hsl(222 47% 11% / 0.85) 0%, hsl(222 47% 11% / 0.7) 50%, hsl(222 47% 11% / 0.95) 100%);
+  }
+
+  .section-overlay {
+    background: linear-gradient(180deg, hsl(222 47% 11% / 0.92) 0%, hsl(222 47% 11% / 0.85) 50%, hsl(222 47% 11% / 0.95) 100%);
+  }
+}
